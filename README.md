@@ -1,3 +1,5 @@
+> Caldera v4.2.0 tweaked by Hayden Chang
+
 [![Release](https://img.shields.io/badge/dynamic/json?color=blue&label=Release&query=tag_name&url=https%3A%2F%2Fapi.github.com%2Frepos%2Fmitre%2Fcaldera%2Freleases%2Flatest)](https://github.com/mitre/caldera/releases/latest)
 [![Testing Status](https://github.com/mitre/caldera/actions/workflows/testing.yml/badge.svg?branch=master)](https://github.com/mitre/caldera/actions/workflows/testing.yml?query=branch%3Amaster)
 [![Security Status](https://github.com/mitre/caldera/actions/workflows/security.yml/badge.svg?branch=master)](https://github.com/mitre/caldera/actions/workflows/security.yml?query=branch%3Amaster)
@@ -12,21 +14,24 @@ It is built on the [MITRE ATT&CK™ framework](https://attack.mitre.org/) and is
 
 The framework consists of two components:
 
-1) **The core system**. This is the framework code, consisting of what is available in this repository. Included is
-an asynchronous command-and-control (C2) server with a REST API and a web interface.
-2) **Plugins**. These repositories expand the core framework capabilities and providing additional functionality. Examples include agents, reporting, collections of TTPs and more.
+1. **The core system**. This is the framework code, consisting of what is available in this repository. Included is
+   an asynchronous command-and-control (C2) server with a REST API and a web interface.
+2. **Plugins**. These repositories expand the core framework capabilities and providing additional functionality. Examples include agents, reporting, collections of TTPs and more.
 
 ## Resources and Socials
-* 📜 [Documentation, training, and use-cases](https://caldera.readthedocs.io/en/latest/)
-* ✍️ [Caldera's blog](https://medium.com/@mitrecaldera/welcome-to-the-official-mitre-caldera-blog-page-f34c2cdfef09)
-* 🌐 [Homepage](https://caldera.mitre.org)
+
+- 📜 [Documentation, training, and use-cases](https://caldera.readthedocs.io/en/latest/)
+- ✍️ [Caldera's blog](https://medium.com/@mitrecaldera/welcome-to-the-official-mitre-caldera-blog-page-f34c2cdfef09)
+- 🌐 [Homepage](https://caldera.mitre.org)
 
 ## Plugins
 
 :star: Create your own plugin! Plugin generator: **[Skeleton](https://github.com/mitre/skeleton)** :star:
 
 ### Default
+
 These plugins are supported and maintained by the Caldera team.
+
 - **[Access](https://github.com/mitre/access)** (red team initial access tools and techniques)
 - **[Atomic](https://github.com/mitre/atomic)** (Atomic Red Team project TTPs)
 - **[Builder](https://github.com/mitre/builder)** (dynamically compile payloads)
@@ -44,7 +49,9 @@ These plugins are supported and maintained by the Caldera team.
 - **[Training](https://github.com/mitre/training)** (certification and training course)
 
 ### More
+
 These plugins are ready to use but are not included by default and are not maintained by the Caldera team.
+
 - **[Arsenal](https://github.com/mitre-atlas/arsenal)** (MITRE ATLAS techniques and profiles)
 - **[CalTack](https://github.com/mitre/caltack.git)** (embedded ATT&CK website)
 - **[Pathfinder](https://github.com/center-for-threat-informed-defense/caldera_pathfinder)** (vulnerability scanning)
@@ -54,14 +61,15 @@ These plugins are ready to use but are not included by default and are not maint
 
 These requirements are for the computer running the core framework:
 
-* Any Linux or MacOS
-* Python 3.7+ (with Pip3)
-* Recommended hardware to run on is 8GB+ RAM and 2+ CPUs
-* Recommended: GoLang 1.17+ to dynamically compile GoLang-based agents.
+- Any Linux or MacOS
+- Python 3.7+ (with Pip3)
+- Recommended hardware to run on is 8GB+ RAM and 2+ CPUs
+- Recommended: GoLang 1.17+ to dynamically compile GoLang-based agents.
 
 ## Installation
 
 Concise installation steps:
+
 ```Bash
 git clone https://github.com/mitre/caldera.git --recursive
 cd caldera
@@ -71,17 +79,21 @@ python3 server.py --insecure
 
 Full steps:
 Start by cloning this repository recursively, passing the desired version/release in x.x.x format. This will pull in all available plugins.
+
 ```Bash
 git clone https://github.com/mitre/caldera.git --recursive --branch x.x.x
 ```
 
 Next, install the PIP requirements:
+
 ```Bash
 pip3 install -r requirements.txt
 ```
+
 **Super-power your Caldea server installation! [Install GoLang (1.17+)](https://go.dev/doc/install)**
 
 Finally, start the server.
+
 ```Bash
 python3 server.py --insecure
 ```
@@ -89,7 +101,9 @@ python3 server.py --insecure
 Once started, log into http://localhost:8888 using the default credentials red/admin. Then go into Plugins -> Training and complete the capture-the-flag style training course to learn how to use Caldera.
 
 ## Docker Deployment
+
 To build a Caldera docker image, ensure you have docker installed and perform the following actions:
+
 ```Bash
 # Recursively clone the Caldera repository if you have not done so
 git clone https://github.com/mitre/caldera.git --recursive
@@ -105,6 +119,7 @@ docker run -p 8888:8888 caldera:latest
 ```
 
 To gracefully terminate your docker container, do the following:
+
 ```Bash
 # Find the container ID for your docker container running Caldera
 docker ps
